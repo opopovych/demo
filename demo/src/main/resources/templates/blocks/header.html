@@ -1,0 +1,21 @@
+
+<div th:fragment="header" >
+<div>
+    <a class="float-md-start mb-0 text-light border border-light mt-2 ml-2 active" href="/coffee">Головна</a>
+   <nav class="nav nav-masthead justify-content-center float-md-end">
+
+    <a class="nav-link text-light border border-light mt-2 pl-2" href="/coffee/capsules">Кава в капсулах</a>
+    <a class="nav-link text-light border border-light mt-2 pl-2" href="/coffee/ground">Кава мелена</a>
+    <a class="nav-link text-light border border-light mt-2 pl-2"  href="/coffee/zerno">Кава в зернах</a>
+    <a class="nav-link text-light border border-light mt-2 pl-2" href="/coffee/add">Добавити</a>
+
+       <form th:action="@{/logout}" method="post">
+           <a class="nav-link text-light border border-light mt-2 ml-2" href="/logout">Вийти</a>
+       </form>
+   </nav>
+</div>
+
+
+
+
+</div>

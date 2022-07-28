@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: white;
+              opacity: 1; /* Firefox */
+  }
+  form, input,textarea, label, p {
+      color: white !important;
+  }
+
+body{
+background-image: url('https://static7.depositphotos.com/1158226/742/i/450/depositphotos_7420372-stock-photo-strange-golden-smoke-taking-away.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+
+}
+main{
+margin-top:200px;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fefefe;
+}
+
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position:fixed;
+	top:0;
+	width:100%;
+	}
+
+li{
+	float: left;
+}
+
+a{
+	font-size: 20px;
+	display: inline-block;
+	padding: 8px;
+	text-decoration: none;
+	color: white;
+	background-color: rgba(9, 9, 9, 0.5);
+
+	margin: 2px;
+	border: 1px solid whitesmoke;
+
+}
+li a:hover, .dropdown:hover .dropbtn{
+	background: darkred;
+	color: white;
+}
+.dropbtn{
+	text-align: center;
+	cursor: pointer;
+}
+.dropdown{
+position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: transparent;
+	min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+}
+.dropdown-content a {
+  color: ghostwhite;
+  padding: 12px 16px;
+  margin: 5px;
+  text-decoration: none;
+  display: block;
+   white-space: nowrap;
+  text-align: left;
+
+}
+
+.dropdown-content a:hover {background-color: darkred;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+h1{
+	color: white;
+	text-align: center;
+	margin-top: 200px;
+	font-family: "times new roman";
+	font-size: 40px;
+}
+h3{
+	font-size: 25px;
+	color: white;
+	text-align: center;
+
+}
+
+
+
+  </style>
+  </head>
+
+<body>
+<header class="mb-auto" th:insert = "blocks/newHeader :: newHeader"></header>
+<br>
+<div class="container mt-3 mb-5 "  >
+  <form class="container mt-5 mb-5" action="/coffee/add" method="post" enctype="multipart/form-data">
+  <h1 class="text-center text-white">Додавання нового виду кави</h1>
+
+
+
+
+
+    <label for="addPHoto" class="control-label file text-white">Добавити Фото</label><br>
+    <input type="file" class="form-control border-white bg-transparent" name="file" id="addPhoto" accept="image/png, image/jpeg" >
+
+    <label for="nameOfCoffee" class="text-white">Назва кави</label>
+    <input type="text" class="form-control border-white bg-transparent" name="name" id="nameOfCoffee" placeholder="Введіть назву кави" >
+
+    <label for="descriptionOfCoffe" class="text-white">Опис кави </label>
+    <textarea class="form-control border-white bg-transparent" name="description" id="descriptionOfCoffe" placeholder="Введіть опис кави" rows="8" cols="80"></textarea>
+    <div class="form-floating">
+      <select class="form-select bg-transparent text-white" id="sel1" name="type">
+        <option >Мелена</option>
+        <option >В капсулах</option>
+        <option >В зернах</option>
+      </select>
+      <label for="sel1" class="form-label text-white">Вибір типу кави:</label>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2 bg-transparent">Створити</button>
+
+</form>
+</div>
+</body>
+</html>
